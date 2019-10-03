@@ -22,5 +22,8 @@ module.exports = {
     return Users.destroy({
       where: args
     })
+  },
+  loginUsers: args => {
+    return Users.findOne(args)
   }
 }
