@@ -45,6 +45,7 @@ UserModel
           first_name: 'Admin',
           last_name: 'User',
           password: "1tp@ssw0rd",
+          contact_no: '000-000-0000',
           type: 'admin'
         }
       })

@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize')
+
 const Employees = require('./Employees')
 const Stores = require('./Stores')
 
@@ -41,6 +42,10 @@ Users.init({
     allowNull: true
   },
   address: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  contact_no: {
     type: Sequelize.STRING,
     allowNull: false
   },
