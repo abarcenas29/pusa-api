@@ -25,6 +25,10 @@ Stores.init({
     type: Sequelize.FLOAT,
     allowNull: false
   },
+  address: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   tel: Sequelize.STRING,
   logo: Sequelize.BLOB,
   created_by: Sequelize.UUID
