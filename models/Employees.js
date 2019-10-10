@@ -15,7 +15,6 @@ Employees.init({
   rate: Sequelize.FLOAT,
   shift_start: Sequelize.TIME,
   shift_end: Sequelize.TIME,
-  store_id: Sequelize.UUID,
   created_by: Sequelize.UUID
 }, {
   sequelize: connection,
