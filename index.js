@@ -22,7 +22,7 @@ const modelConfig = {}
 
 // Relations
 UserModel.hasMany(EmployeeModel)
-UserModel.hasMany(StoreModel)
+UserModel.hasOne(StoreModel)
 EmployeeModel.belongsTo(UserModel)
 EmployeeModel.hasMany(TimeModel)
 StoreModel.belongsTo(UserModel)

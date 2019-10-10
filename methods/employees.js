@@ -1,3 +1,4 @@
+const Users = require('./../models/Users')
 const Employees = require('./../models/Employees')
 
 module.exports = {
@@ -8,7 +9,16 @@ module.exports = {
     if (args.limit) args.limit = parseInt(args.limit)
     if (args.offset) args.offset = parseInt(args.offset)
 
-    return Employees.findAndCountAll(args)
+    const { storeUid } = args
+    return Users.findAndCountAll({
+      ...args,
+      where: {
+        type: 'employee'
+      },
+      include: [
+        { model: Employees, where: { storeUid } }
+      ]
+    })
   },
   updateEmployees: args => {
     const options = args.options || {}
