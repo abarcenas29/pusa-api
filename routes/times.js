@@ -10,16 +10,6 @@ TimeRouters
   .post((req, res) => {
     const { action, ...rest } = req.body
     switch (action) {
-      case 'create':
-        return TimesMethods
-          .createTimes(req.body)
-          .then(o => {
-            res.json(
-              helpers.wrapper(o) || 
-              helpers.wrapper({ error: 'Error retrieving list'})
-            )
-          })
-        break
       case 'query':
         return TimesMethods
           .findTimes(req.body)
