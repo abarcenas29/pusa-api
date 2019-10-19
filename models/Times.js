@@ -12,18 +12,45 @@ Times.init({
     primaryKey: true,
     defaultValue: Sequelize.UUIDV4
   },
-  time_log_type: Sequelize.ENUM('time_in', 'time_out'),
-  time_log: {
+  shift_start: {
     type: Sequelize.DATE,
     allowNull: false
   },
-  lat: {
+  shift_end: {
+    type: Sequelize.DATE,
+    allowNull: false
+  },
+  time_in: {
+    type: Sequelize.DATE,
+    allowNull: false
+  },
+  time_out: {
+    type: Sequelize.DATE,
+    allowNull: true
+  },
+  time_in_loc: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  time_out_loc: {
+    type: Sequelize.STRING,
+    allowNull: true
+  },
+  rate: {
     type: Sequelize.FLOAT,
     allowNull: false
   },
-  long: {
+  late_time: {
     type: Sequelize.FLOAT,
-    allowNull: false
+    allowNull: true
+  },
+  work_time: {
+    type: Sequelize.FLOAT,
+    allowNull: true
+  },
+  gross_pay: {
+    type: Sequelize.FLOAT,
+    allowNull: true
   },
   created_by: {
     type: Sequelize.UUID,

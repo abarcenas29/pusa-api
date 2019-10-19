@@ -67,6 +67,10 @@ module.exports = {
         {
           model: Stores,
           attributes: ['uid']
+        },
+        {
+          model: Employees,
+          attributes: ['uid', 'storeUid']
         }
       ]
     })

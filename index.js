@@ -8,6 +8,7 @@ const StoresRoutes = require('./routes/stores')
 const TimeRoutes = require('./routes/times')
 const UserRoutes = require('./routes/users')
 const LoginRoutes = require('./routes/login')
+const CheckInRoutes = require('./routes/checkin')
 
 // Model
 const EmployeeModel = require('./models/Employees')
@@ -63,6 +64,7 @@ app.use(cors({
 }))
 app.use(bodyParser.json())
 app.use('/', [
+  CheckInRoutes,
   EmployeeRoutes,
   LoginRoutes,
   StoresRoutes,

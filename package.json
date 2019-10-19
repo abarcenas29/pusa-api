@@ -13,7 +13,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mariadb": "^2.1.1",
-    "sequelize": "^5.19.1"
+    "sequelize": "^5.19.1",
+    "dayjs": "^1.8.16"
   },
   "devDependencies": {
     "nodemon": "^1.19.3"
