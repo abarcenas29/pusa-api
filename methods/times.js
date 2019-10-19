@@ -59,6 +59,14 @@ module.exports = {
   findTimes: args => {
     if (args.limit) args.limit = parseInt(args.limit)
     if (args.offset) args.offset = parseInt(args.offset)
+    if (args.time_in) {
+      args.where = {
+        ...args.where,
+        time_in: {
+          [Op.gt]: dayjs().startOf('month').toISOString()
+        }
+      }
+    }
 
     return Times.findAndCountAll(args)
   },
