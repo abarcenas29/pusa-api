@@ -1,27 +1,27 @@
 version: '3.1'
 
 services:
-
-  web:
+  pusa:
     build:
+      dockerfile: .Dockerfile
       context: '.'
-      dockerfile: '.Dockerfile'
-    restart: always
     volumes:
       - ./:/app
     networks:
-      pusa:
+      pusa-net:
+    depends_on:
+      - db
     ports:
       - 5000:5000
-    command: yarn && yarn start
+    entrypoint: 'sh ./build.sh'
 
   db:
     image: mariadb
     restart: always
+    networks:
+      pusa-net:
     environment:
       MYSQL_ROOT_PASSWORD: example
-    networks:
-      pusa:
     ports:
       - 3306:3306
 
@@ -29,9 +29,10 @@ services:
     image: adminer
     restart: always
     networks:
-      pusa:
+      pusa-net:
     ports:
       - 8080:8080
 
 networks:
-  pusa:
+  pusa-net:
+
