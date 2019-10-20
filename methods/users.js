@@ -1,9 +1,13 @@
 const crypto = require('crypto')
 const Sequelize = require('sequelize')
+const dayjs = require('dayjs')
 
 const Users = require('./../models/Users')
 const Stores = require('./../models/stores')
 const Employees = require('./../models/Employees')
+const Times = require('./../models/Times')
+
+const Op = Sequelize.Op
 
 module.exports = {
   createUsers: args => {
@@ -32,7 +36,19 @@ module.exports = {
     return Users.findAndCountAll({
       ...args,
       include: [
-        Employees
+        { 
+          model: Employees, 
+          include: [ 
+            { 
+              model: Times,
+              where: {
+                time_in: {
+                  [Op.gt]: dayjs().startOf('month').toISOString()
+                }
+              }
+            }
+          ]  
+        }
       ]
     })
   },

@@ -1,5 +1,6 @@
 const Users = require('./../models/Users')
 const Employees = require('./../models/Employees')
+const Times = require('./../models/Times')
 
 module.exports = {
   createEmployees: args => {
@@ -16,7 +17,11 @@ module.exports = {
         type: 'employee'
       },
       include: [
-        { model: Employees, where: { storeUid } }
+        { 
+          model: Employees, 
+          where: { storeUid },
+          include: [ Times ]
+        }
       ]
     })
   },
