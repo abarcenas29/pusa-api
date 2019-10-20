@@ -3,7 +3,7 @@ const Sequelize = require('sequelize')
 const dayjs = require('dayjs')
 
 const Users = require('./../models/Users')
-const Stores = require('./../models/stores')
+const Stores = require('./../models/Stores')
 const Employees = require('./../models/Employees')
 const Times = require('./../models/Times')
 
