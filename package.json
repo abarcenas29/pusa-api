@@ -17,7 +17,8 @@
     "dayjs": "^1.8.16"
   },
   "devDependencies": {
-    "nodemon": "^1.19.3"
+    "nodemon": "^1.19.3",
+    "dotenv": "^8.2.0"
   },
   "author": "",
   "license": "ISC",

@@ -60,7 +60,7 @@ StoreModel
 
 
 app.use(cors({
-  origin: 'http://localhost:3100'
+  origin: '*'
 }))
 app.use(bodyParser.json())
 app.use('/', [
