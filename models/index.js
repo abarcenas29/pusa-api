@@ -1,7 +1,9 @@
 const Sequelize = require('sequelize')
+const dotenv = require('dotenv');
+dotenv.config();
 
 const connection = new Sequelize('pusa', 'pusa', '1tp@ssw0rd', {
-  host: 'localhost',
+  host: process.env.DB_NETWORK,
   dialect: 'mariadb',
   dialectOptions: {
     timezone: 'Etc/GMT+8'
