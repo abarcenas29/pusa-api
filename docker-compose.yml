@@ -22,6 +22,8 @@ services:
       pusa-net:
     environment:
       MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - dbPusa:/var/lib/mysql
     ports:
       - 3306:3306
 
@@ -33,6 +35,8 @@ services:
     ports:
       - 8080:8080
 
+volumes:
+  dbPusa:
 networks:
   pusa-net:
 
