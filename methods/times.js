@@ -11,6 +11,7 @@ module.exports = {
     return Times
       .findAll({
         where: {
+          employeeUid: args.employeeUid,
           time_in: {
             [Op.gt]: dayjs(time_in).startOf('day').toISOString(),
           }
