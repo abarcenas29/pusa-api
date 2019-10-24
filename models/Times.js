@@ -36,6 +36,14 @@ Times.init({
     type: Sequelize.STRING,
     allowNull: true
   },
+  time_in_image: {
+    type: Sequelize.BLOB,
+    allowNull: true
+  },
+  time_out_image: {
+    type: Sequelize.BLOB,
+    allowNull: true
+  },
   rate: {
     type: Sequelize.FLOAT,
     allowNull: false
