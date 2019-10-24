@@ -37,11 +37,11 @@ Times.init({
     allowNull: true
   },
   time_in_image: {
-    type: Sequelize.BLOB,
+    type: Sequelize.TEXT,
     allowNull: true
   },
   time_out_image: {
-    type: Sequelize.BLOB,
+    type: Sequelize.TEXT,
     allowNull: true
   },
   rate: {
