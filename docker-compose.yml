@@ -1,6 +1,9 @@
 version: '3.1'
 
 services:
+  pusa:
+    networks:
+      pusa-net:
   db:
     image: mariadb
     restart: always
