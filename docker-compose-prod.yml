@@ -9,8 +9,6 @@ services:
       - ./:/app
     networks:
       pusa-net:
-    depends_on:
-      - db
     ports:
       - 5000:5000
     entrypoint: 'sh ./build.sh'
