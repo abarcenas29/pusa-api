@@ -1,2 +1,1 @@
-yarn
-yarn run start
+node index.js

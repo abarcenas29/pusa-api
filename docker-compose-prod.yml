@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  pusa:
+    build:
+      dockerfile: .Dockerfile
+      context: '.'
+    volumes:
+      - ./:/app
+    networks:
+      pusa-net:
+    depends_on:
+      - db
+    ports:
+      - 5000:5000
+    entrypoint: 'sh ./build.sh'
+    
